@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+.sign-in {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sign-in h1 {
+  padding: 5px 10px;
+  color: #FFFFFF;
+  background-color: #1C7BCA;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.sign-in .sign-in-form {
+  padding: 30px;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.sign-in .sign-in-form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.sign-in .sign-in-form div p {
+  color: #1C7BCA;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.sign-in .sign-in-form div p:hover {
+  color: #15609D;
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+button {
+  font-size: 14px;
+  padding: 5px 15px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+button:hover {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary {
+  background-color: #1C7BCA;
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #15609D;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #1C7BCA;
+  border: solid;
+  border-width: 4px;
+}
+
+.btn-secondary:hover {
+  color: #15609D;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1C7BCA;
+}
+
+input {
+  border: solid;
+  border-radius: 2px;
+  border-color: #1C7BCA;
+  padding: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #62ADEA;
+}
+/*# sourceMappingURL=style.css.map */
