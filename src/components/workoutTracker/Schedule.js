@@ -6,7 +6,6 @@ const Schedule = props =>{
 
     const style ={
         columnCount: '4',
-        rowCount: '7'
 
     }
 
