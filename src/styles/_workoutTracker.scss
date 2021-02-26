@@ -63,19 +63,14 @@ header{
             margin: 50px;
             padding: 10px;
             box-shadow: $shadow;
-            border: 3px solid blue;
-            overflow: scroll;
-
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
         }
 
     }
     
 }
-.masonry-blocks{
-    display: inline-block;
-    width: 100%;
-    margin: 20px;
-}
+
 .day-card{
     display: flex;
     flex-direction: column;
