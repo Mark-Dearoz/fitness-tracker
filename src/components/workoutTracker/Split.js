@@ -7,14 +7,7 @@ const Split = props =>{
 
 
     const renderWorkouts = () =>{
-        return(
-            <>
-            
-            <Workout lift='Bench Press' set='4' reps='10' weight='165'></Workout>
-            <Workout lift='Incline Press' set='4' reps='10' weight='145'></Workout>
-            <hr style={{borderColor: props.color}}/>
-            </>
-        )
+        return props.children.map((item, index) => <Workout key={index} sets={item.sets} reps={item.reps} weight={item.weight}>{item.lift}</Workout>)
     }
 
     return(
@@ -30,9 +23,8 @@ const Split = props =>{
 
             {expand ? renderWorkouts() : null}
             
-            {expand ? 
-            (<button onClick={() => setExpand(false)}>^</button>
-            ): <button onClick={() => setExpand(true)}>V</button>}
+            {expand ? <hr style={{borderColor: props.color}}/> : null}
+            {expand ? <button onClick={() => setExpand(false)}>^</button> : <button onClick={() => setExpand(true)}>V</button>}
             
 
         </div>

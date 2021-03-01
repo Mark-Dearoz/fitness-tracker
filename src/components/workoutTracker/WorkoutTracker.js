@@ -1,6 +1,5 @@
 import { useState } from "react"
 import React, {userState} from 'react'
-import DayCard from './DayCard'
 import Header from './Header';
 import SideBar from './SideBar'
 import Schedule from './Schedule'

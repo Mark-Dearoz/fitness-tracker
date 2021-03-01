@@ -1,22 +1,19 @@
-import { render } from '@testing-library/react'
 import React,{useState} from 'react'
 import Split from './Split'
+import {useDispatch} from 'react-redux'
+import {addWorkoutCard} from '../../actions'
 
 const DayCard = props =>{
 
     const [expand, setExpand] = useState(true)
-    const [splits, setSplits] = useState([
-        {
-            title: 'Chest',
-            color: '#4DBF6D'
-        }
-    ])
+    const dispatch = useDispatch();
 
+    
     const drop = e =>{
         e.preventDefault()
         const splitData = JSON.parse(e.dataTransfer.getData('splitData'))
-        console.log(splitData)
-        //setSplits([...splits, {title: splitData.title, color: splitData.color}])
+        console.log('called')
+        dispatch(addWorkoutCard({card: splitData,day: props.day}))
     }
 
     const dragOver = e =>{
@@ -25,7 +22,7 @@ const DayCard = props =>{
 
     const renderSplits = () =>{
         return(  
-            splits.map((split, index) => <Split key={index} title={split.title} color={split.color}></Split>)
+            props.children.map((item, index) => <Split key={index} title={item.title} color={item.color}>{item.workouts}</Split>)
         )
     }
 
@@ -45,7 +42,7 @@ const DayCard = props =>{
             </div>
         <hr/>
 
-        {expand ? renderSplits() : null}
+        {expand ? renderSplits(): null}
         
         </div>
     )

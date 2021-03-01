@@ -14,7 +14,6 @@ const Workout = props =>{
 
         e.dataTransfer.setData('splitData', JSON.stringify({title: props.children, color: props.color}))
 
-
     }
 
     return(

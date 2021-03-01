@@ -238,6 +238,83 @@ header {
   gap: 10px;
 }
 
+.workout-modal-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.workout-modal-background .modal {
+  position: absolute;
+  width: 25%;
+  background-color: white;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.workout-modal-background .modal .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #1C7BCA;
+  padding: 5px 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.workout-modal-background .modal .body {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.workout-modal-background .modal .body .workout-input input {
+  width: 50%;
+}
+
+.workout-modal-background .modal .body .color-select .colors {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  row-gap: 20px;
+}
+
+.workout-modal-background .modal .body .color-select .colors .color-block {
+  width: 50px;
+  height: 50px;
+}
+
+.workout-modal-background .modal .body .color-select .colors .color-block-selected {
+  width: 50px;
+  height: 50px;
+  border: 3px solid black;
+}
+
+.workout-modal-background .modal .body .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 20px;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
