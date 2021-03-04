@@ -21,6 +21,8 @@ button{
     font-weight: 600;
     letter-spacing: 2px;
     border-radius: 2px;
+    height: fit-content;
+    width: fit-content;
 
     &:hover{
         box-shadow: $shadow;

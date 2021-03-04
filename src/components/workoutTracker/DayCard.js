@@ -12,7 +12,6 @@ const DayCard = props =>{
     const drop = e =>{
         e.preventDefault()
         const splitData = JSON.parse(e.dataTransfer.getData('splitData'))
-        console.log('called')
         dispatch(addWorkoutCard({card: splitData,day: props.day}))
     }
 

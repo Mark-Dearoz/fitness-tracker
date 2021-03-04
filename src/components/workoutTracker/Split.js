@@ -21,8 +21,8 @@ const Split = props =>{
             </div>
             <hr style={{borderColor: props.color}}/>
 
+            {expand ? <button className='btn-primary'>Add Workout</button> : null}
             {expand ? renderWorkouts() : null}
-            
             {expand ? <hr style={{borderColor: props.color}}/> : null}
             {expand ? <button onClick={() => setExpand(false)}>^</button> : <button onClick={() => setExpand(true)}>V</button>}
             

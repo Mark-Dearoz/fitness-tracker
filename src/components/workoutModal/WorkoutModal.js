@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import Color from './Color'
+import {addSplit} from '../../actions'
+import {useDispatch} from 'react-redux'
 
 const WorkoutModal = props =>{
     
+    const dispatch = useDispatch()
     const [workoutInput, setWorkoutInput] = useState('')
     const [colorInput, setColorInput] = useState([{color: '#00B295', selected: false},
                                                 {color: '#028090', selected: false},
@@ -17,7 +20,13 @@ const WorkoutModal = props =>{
 
     const renderColors = () => colorInput.map((item, index) => <Color key={index} selected={item.selected} color={item.color} select={() => select(index)}></Color>)
 
-    const checkForm = () =>{}
+    const checkForm = () =>{
+
+        if (workoutInput.length === 0) return
+        if(colorInput.filter(item => item.selected == true).length === 0) return  
+        dispatch(addSplit({split: workoutInput, color: colorInput.filter(item => item.selected == true)[0].color}))
+        props.onClick()
+    }
     
     
     return(

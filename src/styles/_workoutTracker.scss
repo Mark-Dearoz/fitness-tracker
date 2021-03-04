@@ -36,17 +36,30 @@ header{
             }
         }
 
-        .btn-primary{
-            width: fit-content;
+        .button-div{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            .btn-primary{
+                width: fit-content;
+                height: fit-content;
+            }
         }
+       
 
         .workout-list{
             width: 100%;
-        }
-
-        .workout{
             display: flex;
-            padding: 5px 10px;
+            flex-direction: column;
+            gap: 5px;
+
+            .workout{
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 10px;
+            }
         }
     }
     
@@ -106,15 +119,25 @@ header{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    align-items: center;
+
+    .header{
+        width: 100%;
+    }
+    hr{
+        width: 100%;
+    }
 
 }
 
 .workout-card{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     div{
         display: flex;
+        align-items: center;
         gap: 10px;
     }
     

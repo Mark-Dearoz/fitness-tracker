@@ -1,4 +1,6 @@
 import React from 'react'
+import {useDispatch} from 'react-redux'
+import {deleteSplit} from '../../actions'
 
 const Workout = props =>{
     const expandedStyle = {
@@ -9,6 +11,8 @@ const Workout = props =>{
         justifyContent: 'center',
         borderRadius: '50px'
     }
+
+    const dispatch = useDispatch()
 
     const dragStart = e =>{
 
@@ -24,6 +28,7 @@ const Workout = props =>{
             onDragStart={dragStart}
         >
             <h2>{props.expand ? props.children : props.children.substring(0,1)}</h2>
+            {props.expand ? (props.edit ? <button onClick={() =>dispatch(deleteSplit(props.children))}>x</button> : null): null}
         </div>
     )
 }
