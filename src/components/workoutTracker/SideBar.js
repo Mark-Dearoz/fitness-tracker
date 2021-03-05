@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import Workout from './Workout'
-import WorkoutModal from '../workoutModal/WorkoutModal'
+import Split from './Split'
+import SplitModal from '../Modal/SplitModal/SplitModal'
 import {useSelector} from 'react-redux'
 
 
@@ -10,7 +10,7 @@ const SideBar = props => {
     const [edit, setEdit] = useState(false)
     const splits = useSelector(state => state.splitReducer)
 
-    const renderSplits = () => splits.map((item, index) =>  <Workout key={index} color={item.color} expand={props.expand} edit={edit}>{item.split}</Workout>)
+    const renderSplits = () => splits.map((item, index) =>  <Split key={index} color={item.color} expand={props.expand} edit={edit}>{item.split}</Split>)
 
     return(
         <>
@@ -31,7 +31,7 @@ const SideBar = props => {
                 </div>
             </div>
 
-            {modalOpen ? <WorkoutModal onClick={() => setModalOpen(false)}></WorkoutModal>: null}
+            {modalOpen ? <SplitModal onClick={() => setModalOpen(false)}></SplitModal>: null}
 
         </>
     )

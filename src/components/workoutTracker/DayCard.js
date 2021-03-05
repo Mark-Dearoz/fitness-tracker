@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import Split from './Split'
+import SplitCard from './SplitCard'
 import {useDispatch} from 'react-redux'
-import {addWorkoutCard} from '../../actions'
+import {addSplitCard} from '../../actions'
 
 const DayCard = props =>{
 
@@ -12,7 +12,7 @@ const DayCard = props =>{
     const drop = e =>{
         e.preventDefault()
         const splitData = JSON.parse(e.dataTransfer.getData('splitData'))
-        dispatch(addWorkoutCard({card: splitData,day: props.day}))
+        dispatch(addSplitCard({card: splitData,day: props.day}))
     }
 
     const dragOver = e =>{
@@ -21,7 +21,7 @@ const DayCard = props =>{
 
     const renderSplits = () =>{
         return(  
-            props.children.map((item, index) => <Split key={index} title={item.title} color={item.color}>{item.workouts}</Split>)
+            props.children.map((item, index) => <SplitCard key={index} title={item.title} color={item.color} parent={props.day}>{item.workouts}</SplitCard>)
         )
     }
 

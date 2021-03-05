@@ -1,34 +1,39 @@
-import React,{useState} from 'react'
-import Workout from './WorkoutCard'
+import React from 'react'
+import {useDispatch} from 'react-redux'
+import {deleteSplit} from '../../actions'
 
 const Split = props =>{
+    const expandedStyle = {
+        backgroundColor: props.color
+    }
+    const shirnkStyle = {
+        backgroundColor: props.color,
+        justifyContent: 'center',
+        borderRadius: '50px'
+    }
 
-    const [expand, setExpand] = useState(true);
+    const dispatch = useDispatch()
 
+    const dragStart = e =>{
 
-    const renderWorkouts = () =>{
-        return props.children.map((item, index) => <Workout key={index} sets={item.sets} reps={item.reps} weight={item.weight}>{item.lift}</Workout>)
+        e.dataTransfer.setData('splitData', JSON.stringify({title: props.children, color: props.color}))
+
     }
 
     return(
         <div 
-        className='split-card' 
-        style={{borderColor: props.color}} 
+            className='workout' 
+            style={props.expand ? expandedStyle : shirnkStyle} 
+            draggable={true}
+            onDragStart={dragStart}
         >
-            <div className='header'>
-                <h1 style={{color: props.color}}>{props.title}</h1>
-                <h1 style={{color: '#FD6D6D'}}>Delete</h1>
-            </div>
-            <hr style={{borderColor: props.color}}/>
-
-            {expand ? <button className='btn-primary'>Add Workout</button> : null}
-            {expand ? renderWorkouts() : null}
-            {expand ? <hr style={{borderColor: props.color}}/> : null}
-            {expand ? <button onClick={() => setExpand(false)}>^</button> : <button onClick={() => setExpand(true)}>V</button>}
-            
-
+            <h2>{props.expand ? props.children : props.children.substring(0,1)}</h2>
+            {props.expand ? (props.edit ? <button onClick={() =>dispatch(deleteSplit(props.children))}>x</button> : null): null}
         </div>
     )
 }
+
+
+
 
 export default Split

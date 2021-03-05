@@ -281,18 +281,20 @@ header {
   gap: 10px;
 }
 
-.workout-modal-background {
-  position: absolute;
+.modal-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.workout-modal-background .modal {
+.modal-background .modal {
   position: absolute;
   width: 25%;
   background-color: white;
-  top: 10%;
+  top: 15%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -301,7 +303,7 @@ header {
   border-radius: 10px;
 }
 
-.workout-modal-background .modal .header {
+.modal-background .modal .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -313,7 +315,11 @@ header {
   border-radius: 10px 10px 0px 0px;
 }
 
-.workout-modal-background .modal .body {
+.modal-background .modal .header h1 {
+  color: #FFFFFF;
+}
+
+.modal-background .modal .body {
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -325,11 +331,36 @@ header {
   gap: 20px;
 }
 
-.workout-modal-background .modal .body .workout-input input {
+.modal-background .modal .body .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.modal-background .modal .body .inputs input {
   width: 50%;
 }
 
-.workout-modal-background .modal .body .color-select .colors {
+.modal-background .modal .body .inputs .selects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.modal-background .modal .body .inputs .selects div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.modal-background .modal .body .color-select .colors {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[6];
@@ -337,18 +368,18 @@ header {
   row-gap: 20px;
 }
 
-.workout-modal-background .modal .body .color-select .colors .color-block {
+.modal-background .modal .body .color-select .colors .color-block {
   width: 50px;
   height: 50px;
 }
 
-.workout-modal-background .modal .body .color-select .colors .color-block-selected {
+.modal-background .modal .body .color-select .colors .color-block-selected {
   width: 50px;
   height: 50px;
   border: 3px solid black;
 }
 
-.workout-modal-background .modal .body .buttons {
+.modal-background .modal .body .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

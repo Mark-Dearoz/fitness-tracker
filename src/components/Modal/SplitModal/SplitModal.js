@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import Color from './Color'
-import {addSplit} from '../../actions'
+import {addSplit} from '../../../actions'
 import {useDispatch} from 'react-redux'
 
-const WorkoutModal = props =>{
+const SplitModal = props =>{
     
     const dispatch = useDispatch()
-    const [workoutInput, setWorkoutInput] = useState('')
+    const [splitInput, setSplitInput] = useState('')
     const [colorInput, setColorInput] = useState([{color: '#00B295', selected: false},
                                                 {color: '#028090', selected: false},
                                                 {color: '#4DBF6D', selected: false},
@@ -22,24 +22,24 @@ const WorkoutModal = props =>{
 
     const checkForm = () =>{
 
-        if (workoutInput.length === 0) return
+        if (splitInput.length === 0) return
         if(colorInput.filter(item => item.selected == true).length === 0) return  
-        dispatch(addSplit({split: workoutInput, color: colorInput.filter(item => item.selected == true)[0].color}))
+        dispatch(addSplit({split: splitInput, color: colorInput.filter(item => item.selected == true)[0].color}))
         props.onClick()
     }
     
     
     return(
         
-        <div className='workout-modal-background'>
+        <div className='modal-background'>
             <div className='modal'>
                 <div className='header'>
                     <h1>New Workout</h1>
                 </div>
                 <div className='body'>
-                    <div className='workout-input'>
+                    <div className='inputs'>
                         <h2>Workout Name</h2>
-                        <input type='text' value={workoutInput} onChange={e =>setWorkoutInput(e.target.value)}></input>
+                        <input type='text' value={splitInput} onChange={e =>setSplitInput(e.target.value)}></input>
                     </div>
                     
                     <div className='color-select'>
@@ -60,4 +60,4 @@ const WorkoutModal = props =>{
     )
 }
 
-export default WorkoutModal
+export default SplitModal

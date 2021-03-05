@@ -57,12 +57,23 @@ const cState = [
     }
 ]
 const calendarReducer = (state=cState, action ) =>{
+    const stateCopy = [...state]
     switch(action.type){
+        case 'ADD_SPLIT_CARD':
+            
+            const dayFilter1 = stateCopy.filter(item => item.day === action.payload.day)
+            dayFilter1[0].splits.push({...action.payload.card, workouts: []})
+            return stateCopy
+        case 'DELETE_SPLIT_CARD':
+            const dayFilter2 = stateCopy.filter(item => item.day === action.payload.parent)
+            const splitFilter = dayFilter2[0].splits.filter(item => item.title != action.payload.split)
+            dayFilter2[0].splits = splitFilter
+            return stateCopy
         case 'ADD_WORKOUT_CARD':
-            const newState = [...state]
-            const obj = newState.filter(item => item.day == action.payload.day)
-            obj[0].splits.push({...action.payload.card, workouts: []})
-            return newState
+            const dayFilter3 = stateCopy.filter(item => item.day === action.payload.parent)
+            const splitFilter1 = dayFilter3[0].splits.filter(item => item.title === action.payload.split)
+            splitFilter1[0].workouts.push({lift: action.payload.workout, sets: action.payload.sets, reps: action.payload.reps, weight: action.payload.weight})
+            return stateCopy
         default:
             return state
     }

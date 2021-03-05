@@ -5,14 +5,14 @@ const initialState = [
     }
 ]
 const splitReducer = (state =initialState, action) =>{
-    const newState = [...state]
+    const stateCopy = [...state]
     switch(action.type){
         case 'ADD_SPLIT':
-            newState.push(action.payload)
-            return newState
+            stateCopy.push(action.payload)
+            return stateCopy
         case 'DELETE_SPLIT':
-            const retState = newState.filter(item => item.split != action.payload)
-            return retState
+            const newState = stateCopy.filter(item => item.split != action.payload)
+            return newState
         default:
             return state
     }
