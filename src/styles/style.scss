@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'signin';
-@import 'workoutTracker';
+@import 'header';
+@import 'mainView';
+@import 'components';
 @import 'modal';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
@@ -15,10 +17,10 @@
 
 button{
     font-size: 14px;
-    padding: 5px 15px;
+    padding: 3px 10px;
     outline: none;
     border: none;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 2px;
     border-radius: 2px;
     height: fit-content;
@@ -57,7 +59,7 @@ button{
 
 input{
     border: solid;
-    border-radius: 2px;
+    border-radius: 5px;
     border-color: $primaryBlue;
     padding: 5px;
     outline: none;
@@ -66,7 +68,33 @@ input{
         border-color: $lightBlue;
     }
 }
+select{
+    border: solid;
+    border-radius: 5px;
+    border-color: $primaryBlue;
+    padding: 5px;
+    outline: none;
+}
 
 hr{
     border-top: 1px solid $primaryBlue;
+}
+
+h1{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.arrow{
+        opacity: .60;
+
+    &:hover{
+        opacity: 1;
+    }
+    
 }

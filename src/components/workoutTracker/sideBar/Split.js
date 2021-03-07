@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Cross from '../../svg/Cross'
 import {useDispatch} from 'react-redux'
-import {deleteSplit} from '../../actions'
+import {deleteSplit} from '../../../actions'
 
 const Split = props =>{
     const expandedStyle = {
@@ -14,6 +15,8 @@ const Split = props =>{
 
     const dispatch = useDispatch()
 
+    const [hover, setHover] = useState(false)
+
     const dragStart = e =>{
 
         e.dataTransfer.setData('splitData', JSON.stringify({title: props.children, color: props.color}))
@@ -26,9 +29,11 @@ const Split = props =>{
             style={props.expand ? expandedStyle : shirnkStyle} 
             draggable={true}
             onDragStart={dragStart}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)} 
         >
             <h2>{props.expand ? props.children : props.children.substring(0,1)}</h2>
-            {props.expand ? (props.edit ? <button onClick={() =>dispatch(deleteSplit(props.children))}>x</button> : null): null}
+            {props.expand ? <Cross opacity={hover ? .5 : 0} onClick={() =>dispatch(deleteSplit(props.children))}></Cross> : null}
         </div>
     )
 }

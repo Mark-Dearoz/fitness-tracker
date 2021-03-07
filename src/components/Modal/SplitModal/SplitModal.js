@@ -38,8 +38,10 @@ const SplitModal = props =>{
                 </div>
                 <div className='body'>
                     <div className='inputs'>
-                        <h2>Workout Name</h2>
-                        <input type='text' value={splitInput} onChange={e =>setSplitInput(e.target.value)}></input>
+                        <div>
+                            <h2>Workout Name</h2>
+                            <input type='text' value={splitInput} onChange={e =>setSplitInput(e.target.value)}></input>
+                        </div>
                     </div>
                     
                     <div className='color-select'>

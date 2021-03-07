@@ -1,15 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Cross from '../svg/Cross'
+import {useDispatch} from 'react-redux'
+import { deleteWorkoutCard } from '../../actions'
 
 const WorkoutCard = props =>{
+
+    const [hover, setHover] = useState(false)
+    const dispatch = useDispatch()
     return(
-        <div className='workout-card'>
-            <h1>{props.children}</h1>
+        <div className='workout-card' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+            <h2>{props.children}</h2>
             <div>
-                <h2>{props.sets}</h2>
-                <h2>{props.reps}</h2>
-                <h2>{props.weight}lbs</h2>
+                <p>{props.sets}</p>
+                <p>{props.reps}</p>
+                <p>{props.weight}lbs</p>
             </div>
+            <Cross opacity={hover ? .5 : 0} onClick={() => dispatch(deleteWorkoutCard({day: props.day, split: props.split, workout: props.children}))}></Cross>
         </div>
+
     )
 }
 

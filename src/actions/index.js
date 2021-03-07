@@ -20,6 +20,13 @@ export const addWorkoutCard = (workoutCard) =>{
     }
 }
 
+export const deleteWorkoutCard = (workoutCard) =>{
+    return{
+        type: 'DELETE_WORKOUT_CARD',
+        payload: workoutCard
+    }
+}
+
 
 //split actions
 

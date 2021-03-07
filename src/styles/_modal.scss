@@ -8,7 +8,6 @@
 
     .modal{
         position: absolute;
-        width: 25%;
         background-color: white;
         top: 15%;
         left: 50%;
@@ -32,13 +31,13 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
             .inputs{
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
                 input{
-                    width: 50%
+                    width: 100%;
                 }
 
                 .selects{
@@ -57,6 +56,7 @@
                     display: grid;
                     grid-template-columns: repeat(6, 1fr);
                     row-gap: 20px;
+                    column-gap: 20px;
                     .color-block{
                         width: 50px;
                         height: 50px;

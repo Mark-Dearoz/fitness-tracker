@@ -1,7 +1,7 @@
 import { useState } from "react"
 import React, {userState} from 'react'
-import Header from './Header';
-import SideBar from './SideBar'
+import Header from './header/Header';
+import SideBar from './sideBar/SideBar'
 import Schedule from './Schedule'
 
 const WorkoutTracker = () =>{

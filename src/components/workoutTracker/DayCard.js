@@ -35,14 +35,13 @@ const DayCard = props =>{
             <div className='header'>
                 <h1>{props.day}</h1>
                 <div>
-                    <h1>{`${props.month}/${props.date}`}</h1>
-                    {expand ? <button onClick={() => setExpand(false)}>^</button> : <button onClick={() => setExpand(true)}>V</button>}       
+                    <h1>{`${props.month}/${props.date}`}</h1>      
                 </div>
             </div>
-        <hr/>
 
-        {expand ? renderSplits(): null}
-        
+            <hr/>
+
+            {renderSplits()}
         </div>
     )
 }

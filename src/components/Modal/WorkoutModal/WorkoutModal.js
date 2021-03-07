@@ -21,7 +21,7 @@ const WorkoutModal = props =>{
     const checkForm = () =>{
         if(workoutInput.length === 0) return
         if(isNaN(parseInt(weightInput))) return
-        dispatch(addWorkoutCard({parent: props.parent, split: props.split, workout: workoutInput, sets: setsInput, reps: repsInput, weight: parseInt(weightInput)}))
+        dispatch(addWorkoutCard({day: props.parent, split: props.split, workout: workoutInput, sets: setsInput, reps: repsInput, weight: parseInt(weightInput)}))
         props.onClick()
     }
     return(

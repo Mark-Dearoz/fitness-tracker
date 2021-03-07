@@ -109,10 +109,11 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 50px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
   background-color: #1C7BCA;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
@@ -167,6 +168,10 @@ header {
   padding: 5px 10px;
 }
 
+.main-view .side-bar .workout-list svg:hover {
+  opacity: 1;
+}
+
 .main-view .schedule {
   width: 100%;
   border-radius: 5px;
@@ -184,14 +189,13 @@ header {
 .main-view .schedule .calendar {
   width: 100%;
   height: 85vh;
-  margin: 50px;
-  padding: 10px;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  margin: 10px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
 }
 
 .day-card {
@@ -208,7 +212,7 @@ header {
   height: max-content;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+  padding: 3px;
   gap: 5px;
 }
 
@@ -257,28 +261,68 @@ header {
   width: 100%;
 }
 
+.split-card .header .delete-btn {
+  color: #FD6D6D;
+  cursor: pointer;
+}
+
+.split-card .header .delete-btn:hover {
+  font-weight: 600;
+}
+
 .split-card hr {
   width: 100%;
 }
 
 .workout-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  padding: 3px;
+}
+
+.workout-card:hover {
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.workout-card h2 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 .workout-card div {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
+  gap: 5px;
+}
+
+.workout-card svg {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.workout-card svg:hover {
+  opacity: 1;
 }
 
 .modal-background {
@@ -292,7 +336,6 @@ header {
 
 .modal-background .modal {
   position: absolute;
-  width: 25%;
   background-color: white;
   top: 15%;
   left: 50%;
@@ -328,7 +371,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .modal-background .modal .body .inputs {
@@ -343,7 +386,7 @@ header {
 }
 
 .modal-background .modal .body .inputs input {
-  width: 50%;
+  width: 100%;
 }
 
 .modal-background .modal .body .inputs .selects {
@@ -366,6 +409,8 @@ header {
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
   row-gap: 20px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .modal-background .modal .body .color-select .colors .color-block {
@@ -399,10 +444,10 @@ header {
 
 button {
   font-size: 14px;
-  padding: 5px 15px;
+  padding: 3px 10px;
   outline: none;
   border: none;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 2px;
   border-radius: 2px;
   height: -webkit-fit-content;
@@ -446,7 +491,7 @@ button:hover {
 
 input {
   border: solid;
-  border-radius: 2px;
+  border-radius: 5px;
   border-color: #1C7BCA;
   padding: 5px;
   outline: none;
@@ -456,7 +501,33 @@ input:focus {
   border-color: #62ADEA;
 }
 
+select {
+  border: solid;
+  border-radius: 5px;
+  border-color: #1C7BCA;
+  padding: 5px;
+  outline: none;
+}
+
 hr {
   border-top: 1px solid #1C7BCA;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.arrow {
+  opacity: .60;
+}
+
+.arrow:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
