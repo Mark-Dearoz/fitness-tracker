@@ -1,16 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Split from './Split'
 import SplitModal from '../../modal/splitModal/SplitModal'
 import Arrow from '../../svg/Arrow'
-import {useSelector} from 'react-redux'
+import {getSplits} from '../../../actions/split'
+import {useSelector, useDispatch} from 'react-redux'
 
 
 const SideBar = props => {
 
     const [modalOpen, setModalOpen] = useState(false)
     const splits = useSelector(state => state.splitReducer)
+    const dispatch = useDispatch()
 
-    const renderSplits = () => splits.map((item, index) =>  <Split key={index} color={item.color} expand={props.expand}>{item.split}</Split>)
+    useEffect(() =>{
+        dispatch(getSplits())
+    },[])
+
+    const renderSplits = () => splits.map((item, index) =>  <Split key={item._id} id={item._id} color={item.color} expand={props.expand}>{item.split}</Split>)
 
     return(
         <>

@@ -1,18 +1,16 @@
-const initialState = [
-    {
-        split: 'Chest',
-        color: '#00B295'
-    }
-]
-const splitReducer = (state =initialState, action) =>{
-    const stateCopy = [...state]
+
+const splitReducer = (state =[], action) =>{
     switch(action.type){
+        case 'FETCH_SPLITS':
+            return action.payload
         case 'ADD_SPLIT':
-            stateCopy.push(action.payload)
-            return stateCopy
-        case 'DELETE_SPLIT':
-            const newState = stateCopy.filter(item => item.split != action.payload)
-            return newState
+            return [...state, action.payload]
+        case 'DELETE_SPLITS':
+            return state.filter(item => item._id != action.payload)
+        case 'PATCH_SPLIT':
+            const updatedState = state.map(item => item._id === action.payload._id ? 
+                {_id: action.payload._id, split: action.payload.split, color: action.payload.color} : item)
+            return updatedState
         default:
             return state
     }

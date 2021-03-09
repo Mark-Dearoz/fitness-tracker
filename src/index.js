@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals'
-import {createStore} from 'redux'
+import {applyMiddleware, createStore, compose} from 'redux'
 import allReducers from './reducers'
 import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
 
-const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(allReducers,compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f))
 
 ReactDOM.render(
   <Provider store={store}>
