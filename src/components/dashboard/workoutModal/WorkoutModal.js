@@ -76,36 +76,36 @@ const WorkoutModal = props =>{
                         </Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-2'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-2'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-3'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-3'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-4'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-4'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-5'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-5'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-6'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-6'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-7'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-7'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-8'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-8'></Select>
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <InputLabel id='workout-group-1'>Workout Group1</InputLabel>
-                        <Select labelId='workout-group-1'></Select>
+                        <InputLabel id='workout-group-9'>Workout Group1</InputLabel>
+                        <Select labelId='workout-group-9'></Select>
                     </FormControl>
                 </Paper>
                 <Container className={classes.buttonContainer}>

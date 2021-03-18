@@ -1,11 +1,11 @@
 import React from 'react'
 import {Paper, Select, InputLabel, FormControl, Container} from '@material-ui/core'
 import Chart from 'react-apexcharts'
-import {makeStyles} from '@material-ui/styles'
+import {makeStyles} from '@material-ui/core/styles'
 
 const options = {
     chart: {
-      background: '#f4f4f4',
+      background: 'rgba(255,255,255,0.5)',
       foreColor: '#333'
     },
     xaxis: {
@@ -26,16 +26,12 @@ const series = [{
 }]
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
     paper: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '8px',
+        backgroundColor: theme.palette.primary.main,
         padding: '24px',
-        margin: '0px'
-    },
-    container:{
-        padding: '0px'
+        margin: '0px',
+        height: 'calc(50vh - 60px)'
     },
     formControl:{
         width:'192px'
@@ -46,7 +42,7 @@ const Graph = () =>{
     const classes = useStyles()
     return(
         <Paper className={classes.paper} elevation={2}>
-            <Container className={classes.container}>
+            <Container>
                 <FormControl className={classes.formControl}>
                     <InputLabel> label</InputLabel>
                     <Select></Select>
@@ -56,9 +52,9 @@ const Graph = () =>{
                     <Select></Select>
                 </FormControl>
             </Container>
-            <Container className={classes.container}>
-                <Chart options={options} series={series} type='bar' width='100%'/>
-            </Container>
+            <div style={{height: '90%', padding: '24px'}}>
+                <Chart options={options} series={series} type='bar' height='100%'/>
+            </div>
 
         </Paper>
     )
