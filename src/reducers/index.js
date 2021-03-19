@@ -1,10 +1,12 @@
 import splitReducer from './split'
-import calendarReducer from './calendar'
+import exerciseReducer from './exercise'
+import maxReducer from './max'
 import {combineReducers} from 'redux'
 
 const allReducers = combineReducers({
-    splitReducer: splitReducer,
-    calendarReducer: calendarReducer,
+    splits: splitReducer,
+    exercises: exerciseReducer,
+    max: maxReducer
 })
 
 export default allReducers

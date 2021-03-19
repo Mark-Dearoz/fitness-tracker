@@ -24,10 +24,10 @@ const Dashboard = () =>{
             <SideBar onClose={() => setSideBarOpen(false)} open={sideBarOpen} userName='Mark Dearoz'/>
             <Box className={classes.box}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} lg={6}>
+                    <Grid item xs={12} sm={6}>
                         <Graph/>
                     </Grid>
-                    <Grid item lg={3} md={6}>
+                    <Grid item xs={12} sm={6} lg={3}>
                         <BestLift/>
                     </Grid>
                     <Grid item xs={12}>
