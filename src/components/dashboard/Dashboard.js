@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Header from '../Header'
 import SideBar from '../SideBar'
 import Planner from './plannerModule/Planner'
@@ -6,6 +6,8 @@ import Graph from './graphModule/Graph'
 import BestLift from './bestLiftModule/BestLift'
 import {Grid, Box} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
+import {useDispatch} from 'react-redux'
+import { getExercises } from '../../actions/exercise'
 
 const useStyles = makeStyles(theme => ({
     box: {
@@ -16,7 +18,12 @@ const useStyles = makeStyles(theme => ({
 
 const Dashboard = () =>{
     const classes = useStyles()
+    const dispatch = useDispatch()
     const [sideBarOpen, setSideBarOpen] = useState(false)
+
+    useEffect(() => {
+        dispatch(getExercises())
+    }, [])
 
     return(
         <>

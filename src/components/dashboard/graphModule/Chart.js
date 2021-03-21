@@ -13,56 +13,67 @@ const Chart = props => {
                 show: false
             },
             background: 'rgba(0,0,0,0)',
+            fontFamily: theme.typography.fontFamily,
+            foreColor: theme.palette.primary.contrastText,
+            zoom: {
+                enabled: false
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        fill: {
+            type: "gradient",
+            gradient: {
+                type: 'vertical',
+                shadeIntensity: 1,
+                opacityFrom: 0.9,
+                opacityTo: 0.5,
+            }   
+        },
+        grid: {
+            borderColor: 'rgba(255,255,255,0.2)'
+        },
+        stroke: {
+            curve: 'smooth',
+            width: 4,
         },
         plotOptions: {
             bar: {
                 horizontal: false
             },
-            fill: {
-                colors: ['#f44336']
-            }
         },
         xaxis: {
-            labels: {
-                style: {
-                    colors: theme.palette.primary.contrastText
-                },
-                offsetY: -2
-            },
             axisTicks: {
                 show: false,
-            }
+            },
         },
         yaxis: {
-            labels: {
-                style: {
-                    colors: theme.palette.primary.contrastText,
-                    fontFamily: theme.typography.fontFamily
-                },
-                offsetX: 4
-            },
             axisTicks: {
                 show: false,
             },
-            title: {
-                text: props.yaxis,
-                style: {
-                    color: theme.palette.primary.contrastText,
-                    fontSize: theme.typography.fontSize,
-                    fontFamily: theme.typography.fontFamily
-                }
+        },
+        tooltip: {
+            enabled: true,
+            fillSeriesColor: true,
+            marker: {
+                show: false,
+            },
+            x: {
+                show: false,
             }
-        }
-        
+        } 
     }
     
     const series = [{
-        data: [[1991,30],[1992,40],[1993,45],[1994,50],[1995,49],[1996,60],[1997,90]]
+        name: 'Weight',
+        data: props.data
     }]
 
 
     return(
         <>
+            {console.log(series)}
             <ApexChart 
                 options={options} 
                 series={series} 

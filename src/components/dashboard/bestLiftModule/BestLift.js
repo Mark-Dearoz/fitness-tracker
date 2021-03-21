@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {Paper, Typography, FormControl, Select,MenuItem, Box} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 import {useDispatch, useSelector} from 'react-redux'
-import {getExercises} from '../../../actions/exercise'
 import {getMax} from '../../../actions/max'
 
 const useStyles = makeStyles(theme => ({
@@ -37,9 +36,6 @@ const BestLift = () =>{
     const renderMenuItems = () => exercises.map(exercise => <MenuItem key={exercise._id} value={exercise._id}>{exercise.exercise}</MenuItem>)
 
     useEffect(() => {
-        dispatch(getExercises())
-    }, [])
-    useEffect(() => {
         if(!exercise.length) return
         dispatch(getMax(exercise))
     }, [exercise])
@@ -52,7 +48,7 @@ const BestLift = () =>{
                     {renderMenuItems()}
                 </Select>
             </FormControl>
-            <Typography variant='body1'>{max.workout === undefined ? 'Date' : new Date(max.workout.date).toDateString()}</Typography>
+            <Typography variant='body1'>{max.workout === undefined ? new Date().toDateString() : new Date(max.workout.date).toDateString()}</Typography>
             <Box className={classes.repsWeight}>
                 <Typography variant='body1'>{max.workout === undefined ? '0 repetitions' : `${max.workout.reps} repetitions`}</Typography>
                 <Typography variant='body1'>{max.workout === undefined ? '0 pounds' : `${max.workout.weight} pounds`}</Typography>
