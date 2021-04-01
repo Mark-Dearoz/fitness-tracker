@@ -4,7 +4,7 @@ import LoginPage from './components/loginPage/LoginPage'
 import Dashboard from './components/dashboard/Dashboard'
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import {grey} from '@material-ui/core/colors'
-import './styles/style.css'
+import './style.css'
 
 const theme = createMuiTheme({
   palette: {

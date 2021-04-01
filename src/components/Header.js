@@ -5,7 +5,9 @@ import MenuIcon from '@material-ui/icons/Menu'
 
 const useStyles = makeStyles(theme => ({
     appBar: {
-        height: 'min-content'
+        height: 'min-content',
+        paddingLeft: theme.spacing(3),
+        paddingRight: theme.spacing(3),
     },
     toolBar: {
         width: '100%',
