@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = 'http://localhost:5000'
+const url = 'https://apple-surprise-43422.herokuapp.com'
 
 const config = () =>{
     const t = JSON.parse(localStorage.getItem('profile'))?.token
