@@ -5,7 +5,9 @@ import {useMediaQuery} from '@material-ui/core'
 
 const Chart = props => {
     const theme = useTheme()
-    const mediaQuery = useMediaQuery(theme.breakpoints.up('lg'))
+    const isXL = useMediaQuery(theme.breakpoints.up('xl'))
+    const isLG = useMediaQuery(theme.breakpoints.up('lg'))
+    const isMD = useMediaQuery(theme.breakpoints.up('md'))
 
     const options = {
         chart: {
@@ -66,19 +68,20 @@ const Chart = props => {
     }
     
     const series = [{
-        name: 'Weight',
+        name: props.axisName,
         data: props.data
+
     }]
 
 
     return(
         <>
-            {console.log(series)}
             <ApexChart 
                 options={options} 
                 series={series} 
-                type={props.type} 
-                width={mediaQuery ? '560px' : '100%'}/>
+                type={props.type}
+                height={isMD ? '95%' : 'auto'} 
+                width={isXL ? '880px' : isLG ? '610px' : isMD ? '440px':'100%'}/>
         </>
     )
 }

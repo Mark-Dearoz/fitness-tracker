@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {Drawer, IconButton, List, ListItem, Typography, Divider} from '@material-ui/core'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -6,6 +7,8 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import {makeStyles} from '@material-ui/styles'
+import {useDispatch} from 'react-redux'
+
 
 const useStyle = makeStyles(() => ({
     list: {
@@ -26,6 +29,7 @@ const useStyle = makeStyles(() => ({
 }))
 
 const SideBar = props =>{
+    const dispatch = useDispatch()
     const classes = useStyle()
 
     return(
@@ -40,9 +44,11 @@ const SideBar = props =>{
                 <ListItem className={classes.listItem}>
                     <AccountCircleIcon fontSize='large'/>
                     <Typography variant='h6'>{props.userName}</Typography>
-                    <IconButton className={classes.iconButton}>
-                        <ExitToAppIcon />
-                    </IconButton>
+                    <Link to='/'>
+                        <IconButton className={classes.iconButton} onClick={() => dispatch({type: "LOGOUT"})}>
+                            <ExitToAppIcon />
+                        </IconButton>
+                    </Link>
                 </ListItem>
                 <Divider/>
                 <ListItem className={classes.listItem} button={true}>

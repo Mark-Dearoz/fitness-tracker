@@ -69,7 +69,7 @@ const Graph = () =>{
                 </FormControl>
             </Box>
             <Box className={classes.chart}>
-                <Chart type='area' data={data}/>
+                <Chart type='area' data={data} axisName={category}/>
             </Box>
         </Paper>
     )

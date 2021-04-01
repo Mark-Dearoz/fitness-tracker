@@ -1,6 +1,6 @@
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import SignIn from './components/SignIn'
+import LoginPage from './components/loginPage/LoginPage'
 import Dashboard from './components/dashboard/Dashboard'
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles'
 import {grey} from '@material-ui/core/colors'
@@ -22,8 +22,8 @@ const App = () => {
       <Router>
         <div className="App">
           <Switch>
-            <Route path='/' exact component={SignIn}/>
-            <Route path='/user' component={Dashboard}/>
+            <Route path='/' exact component={LoginPage}/>
+            <Route path='/dashboard' component={Dashboard}/>
           </Switch>
         </div>
       </Router>
